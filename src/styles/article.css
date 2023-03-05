@@ -32,7 +32,7 @@
     display: flex;
     width: 80%;
     align-self: center;
-    height: 80px;
+    height: 100%;
     align-items: center;
     justify-content: space-between;
     font-size: 14px;

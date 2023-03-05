@@ -1,9 +1,9 @@
 import '../styles/article.css';
 
-function Article ({name_product}) {
+function Article ({name_product, img, price, alt ,id, comprar}) {
     return(
-        <div className='container'>
-            <img src={require('../Images/165319177802d544dad2fc70cb52e501b847441cfb_thumbnail_600x.webp')} alt="Pantalones" />
+        <div className='container' id={id}>
+            <img src={require(`../Images/${img}.jpg`)} alt={alt} />
             <p className='nombre_producto'>{name_product}</p>
             <div className='tallas'>
                 <p className="talla">XL</p>
@@ -12,7 +12,7 @@ function Article ({name_product}) {
                 <p className="talla">S</p>
                 <p className="talla">XS</p>
             </div>
-            <input type="submit" value='33.99$' className='precio' />
+            <input type="submit" value={price} className='precio' onClick={()=>comprar(id)} />
         </div>
     )
 }

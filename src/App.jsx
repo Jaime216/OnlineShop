@@ -5,18 +5,31 @@ import { useState } from 'react';
 
 function App() {
     const [ arr , setarr ] = useState([ {
-            name_product:"Pantalon"
+            name_product:"Pantalon",
+            img: 'pantalon',
+            price: '33.99$',
+            comprado:false,
+            id:uuidv4()
         },{
-            name_product:"Camiseta"
+            name_product:"Camiseta",
+            img: 'camiseta',
+            price: '20.99$',
+            comprado:false,
+            id:uuidv4()
         },{
-            name_product:"Blusa"
+            name_product:"Blusa",
+            img: 'camisa',
+            price: '40.99$',
+            comprado:false,
+            id:uuidv4()
         },{
-            name_product:"Gorra"
-        },{
-            name_product:"Bañador"
-        },{
-            name_product:"Pantalon"
-        }])
+            name_product:"Gorra",
+            img: 'gorra',
+            price: '10.99$',
+            comprado:false,
+            id:uuidv4()
+        }
+    ])
     let counter = 0;
 
     function moveLeft () {
@@ -27,6 +40,25 @@ function App() {
     function moveRight () {
         let borrado = arr.pop();
         setarr([borrado,...arr])
+    }
+
+    function comprar (id) {
+        let v = document.getElementById('alertaCarrito');
+        let animacion = v.animate([
+             {
+                right:'-200px'
+            },{
+                right:'20px'
+            }],{
+                iterations:1,
+                fill:'forwards',
+                duration:100
+            }
+        );
+        setTimeout(()=>{
+             animacion.reverse()
+        },1600)
+        
     }
 
   return (
@@ -117,18 +149,27 @@ function App() {
               
       </header>
       <main>
+        <div className='alertaCarrito' id='alertaCarrito' >
+            <p>! Añadido<br/>al carrito ¡</p>
+        </div>
         <h1 className='main-title'>Primer lanzamiento</h1>
-        <p>Esta es la primera colección de una marca practicamente nueva, los pedidos se realizan a demanda, sin costes adicionales de envio. Aprovecha ahora que aun no somos muy conocidos para comprar y en el futuro poder decir que eras nuestro cliente cuando aun nadie nos conocía.</p>
+        <p className='main-txt'>Esta es la primera colección de una marca practicamente nueva, los pedidos se realizan a demanda, sin costes adicionales de envio. Aprovecha ahora que aun no somos muy conocidos para comprar y en el futuro poder decir que eras nuestro cliente cuando aun nadie nos conocía.</p>
         
         <div className='pants'>
             <input type='button' onClick={moveRight} className='right' value='right' />
             <input type='button' onClick={moveLeft} className='left' value='left' />
             {arr.map(obj=>{
-                if(counter < 3){
+                if(counter < 5){
                     counter++;
                     return <Article 
-                            key={uuidv4()}
-                            name_product={obj.name_product}/>
+                            key={obj.id}
+                            id={obj.id}
+                            name_product={obj.name_product}
+                            img={obj.img}
+                            price={obj.price}
+                            alt={obj.name_product}
+                            comprado={obj.comprado}
+                            comprar={comprar} />
                 }else return console.log("Ya")
             })}
         </div>
