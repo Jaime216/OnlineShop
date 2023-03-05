@@ -1,38 +1,252 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Nerko One', cursive;
+  font-family: 'Zen Dots', cursive;
+}body{min-height: 100vh;width: 100vw;}i{color: white;}
+
+/* Header */
+  #header{
+      z-index: 2;
+      width: 70px;
+      position: fixed;
+      background-color: #17191d;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between
+  }
+  
+  
+
+  /* Logo */
+  #logo{
+      margin: 20px 10px 20px 10px;
+      height: 40px;
+      object-fit: contain;
+  }
+  /* Iconos */
+  #header-nav{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+  
+  /* Grupo icono config general */
+  .navegation div{
+      margin: 20px 0;
+      height: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 20%;
+      justify-content: space-around;
+  }
+      /* Iconos config general */
+          .navegation div a i{
+              width: 70px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+          }
+      /* Texto nav config general */
+          .navegation div a{
+              display: flex;
+              align-self: flex-start;
+              white-space: nowrap;
+              text-decoration: none;
+              height: 22px;
+          }.navegation div a p{
+              margin-left: 5px;
+              color: white;
+              position: relative;
+              display: flex;
+              margin-bottom: 2px;
+          }.letra{
+              opacity: 0;
+              display: none;
+          }#header:hover .letra{
+              display: unset;
+          }
+          /* Animación letras */
+              #header:hover .letra1{
+                      animation: opacityEffect;
+                      animation-duration: 1s;
+                      animation-delay: 0.1s;
+                      animation-fill-mode: forwards;
+                  }#header:hover .letra2{
+
+                      animation: opacityEffect;
+                      animation-duration: 1s;
+                      animation-delay: 0.2s;
+                      animation-fill-mode: forwards;
+                  }#header:hover .letra3{
+
+                      animation: opacityEffect;
+                      animation-duration: 1s;
+                      animation-delay: 0.3s;
+                      animation-fill-mode: forwards;
+                  }#header:hover .letra4{
+
+                      animation: opacityEffect;
+                      animation-duration: 1s;
+                      animation-delay: 0.4s;
+                      animation-fill-mode: forwards;
+                  }#header:hover .letra5{
+
+                      animation: opacityEffect;
+                      animation-duration: 1s;
+                      animation-delay: 0.5s;
+                      animation-fill-mode: forwards;
+                  }#header:hover .letra6{
+
+                      animation: opacityEffect;
+                      animation-duration: 1s;
+                      animation-delay: 0.6s;
+                      animation-fill-mode: forwards;
+                  }#header:hover .letra7{
+
+                      animation: opacityEffect;
+                      animation-duration: 1s;
+                      animation-delay: 0.7s;
+                      animation-fill-mode: forwards;
+                  }#header:hover .letra8{
+
+                      animation: opacityEffect;
+                      animation-duration: 1s;
+                      animation-delay: 0.8s;
+                      animation-fill-mode: forwards;
+                  }#header:hover .letra9{
+
+                      animation: opacityEffect;
+                      animation-duration: 1s;
+                      animation-delay: 0.9s;
+                      animation-fill-mode: forwards;
+                  }#header:hover .letra10{
+
+                      animation: opacityEffect;
+                      animation-duration: 1s;
+                      animation-delay: 1s;
+                      animation-fill-mode: forwards;
+                  }
+                  
+                  /* Animación */
+                      @keyframes opacityEffect {
+                          form{opacity: 0;}
+                          to{opacity: 1;}
+                      }
+
+
+  /* Grupo iconos superiores */ */
+      .iconosSuperiores div {
+          display: flex;
+      }
+      /* Icono HOME */
+          #iconoHome a{white-space: nowrap;}
+          #iconoHome a i{display: flex;}
+      /* Icono ABOUT US */
+          #iconoAbout a{display: flex;}
+          #iconoAbout a i{display: flex;}
+      /* Icono CONTACT US */
+          #iconoContact a{display: flex;}
+          #iconoContact a i{display: flex;} 
+
+  /* Grupo iconos inferiores */
+       .iconosInferiores div {
+          display: flex;
+      } 
+      /* Icono LOG IN */
+          #iconoLog a{display: flex;}
+          #iconoLog a i{display: flex;} 
+      /* Icono REGISTER */
+          #iconoRegister a{display: flex;}
+          #iconoRegister a i{display: flex;}
+
+
+
+
+  /* Iconos hover */
+  /* Header hover */
+      #headerHover{
+          width: 140px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 70px;
+          background-color: #17191d;
+          z-index: -1;
+          transform: scaleX(0);
+          transform-origin: bottom left;
+          transition: transform 1s ;
+      }
+      #header:hover #headerHover{
+          transform: scaleX(1);
+          transform-origin: bottom left;
+      }
+
+  /* Texto hover */
+      .navegation div a p::after{
+          content: "";
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          left: 0;
+          background-color: white;
+          top: 100%;
+          opacity: 1;
+          transition: all 1s;
+      }
+      /* Subrayado */
+          .navegation div a p:hover::after{
+              width: 100%;
+          }
+  
+main{
+    margin-left: 70px;
+    display: block;
+    min-height: 100vh;
+    align-items: center;
+}
+.main-title{
+    margin: 30px 0;
 }
 
-.App-link {
-  color: #61dafb;
+main p {
+    margin: 10px  auto;
+    width: 85%;
+    text-align: start;
+    font-weight: 100;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pants{
+    position: relative;
+    height: 400px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.right{
+    position: absolute;
+    right: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+.left{
+    position: absolute;
+    left: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
 }

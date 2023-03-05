@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 220px;
+    height: 100%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0 40px;
+}
+.container img {
+    width: 100%;
+    object-fit: contain;
+}
+.nombre_producto{
+    margin: 0;
+    margin-top: 12px;
+    margin-left: 5px;
+}
+
+.precio {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.tallas{
+    display: flex;
+    width: 80%;
+    align-self: center;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.talla{
+    width: fit-content;
+    cursor: pointer;
+}
